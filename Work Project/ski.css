@@ -1,0 +1,93 @@
+
+html{
+margin: auto;
+max-width: 938px;
+background-color: whitesmoke; background-image: url('https://static01.nyt.com/images/2019/11/26/travel/26trending-apps01/26trending-apps01-superJumbo.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}  
+a,div,fieldset,footer,html,legend{
+font-family: "Lato", sans-serif;
+font-size: 16px;
+font-style: normal;
+font-weight: normal;
+line-height: 1;
+color: #000;
+text-emphasis: bold;
+}
+#HeaderLogo path.mj-logo-character { fill: #ad2e39;
+}
+#HeaderLogo svg { display: block; width: 100%; height: 50px; margin: 0 auto; padding-bottom: 10px; align-content: center;
+}
+.columnsLeft{ width: 50% !important; float: left; vertical-align: top; }
+
+.form-field {display: block;margin:0 0 0 0;line-height: 1.1em; vertical-align: inherit;}
+.columnsRight{ width: 50% !important; float: Right; vertical-align: top;}
+.serviceBody {position: relative; margin: 15px 0; padding: 10;}
+.borderSep{
+border-color: #ad2e39;
+border-style: groove;
+border-width: 2px;
+padding: 10px;
+padding-top: 10px;
+}
+fieldset{
+background-color: whitesmoke;
+margin-top: 10px;
+}
+.boxAlign{
+margin: 0 0 0 0;
+padding-bottom: 5px;
+}
+.phNum{
+padding-right: 65px;
+}
+.date_in{
+padding-right: 25px;
+}
+.date_out{
+padding-right: 15px;
+}
+.email{
+padding-right: 15px;
+}
+.make{
+padding-right: 5px;
+}
+.mdl{
+
+}
+.weight{
+padding-right: 10px;
+}
+legend{
+padding-top: 1px;
+border-color: #ad2e39;
+border-style: groove;
+border-width: 2px;
+background-color: whitesmoke;
+}
+.textArea{
+width: 100%;
+height: 126px;
+}
+.btn{ border: 2px solid #fff; background: #ad2e39; color: #fff; text-decoration: none; width: 50%; text-align: center; font-size: 16px;
+}
+.link{
+font-size: 16px;
+background: #ad2e39; color: #fff; text-decoration: none; width: 100px; text-align: center; border-color: #fff; border-width: 1.5px; border-style: solid;padding: 2px; padding-left: 55px; padding-right: 55px;
+}
+footer{
+margin: 0 auto;
+max-width: 766px;
+padding-top: 30px;
+padding-right: 5%;
+padding-left: 5%;
+padding-bottom: 25px;
+font-size: 16px;
+}
+.option_bold{
+font-weight: bold;
+color: #ad2e39;
+}
