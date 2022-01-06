@@ -23,6 +23,71 @@ body{
     
     
 }
+a{
+    color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+option{
+    color: black;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    border: black;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+}
+select{
+    color: white;
+    width: auto;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+}
+input{
+    background: rgba(255,255,255,.5);
+    border: none;
+    color: white;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+legend {
+    color: #ad2e39;
+    margin-bottom: 439px;
+    position: absolute;
+    font-size: 57px;
+    font-weight: bold;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: bold;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+label, input, textarea{
+    padding: 1%;
+    
+}
+
+input, textarea{
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    height: 35%;
+}
+.option_title{
+    text-align: center;
+    color: #ad2e39;
+}
 .body_box{
     margin: auto;
     position: relative;
@@ -37,16 +102,8 @@ body{
     left: 0%;
     right: 0%;
     background-image: url('https://blisterreview.com/wp-content/uploads/2021/06/71-bike-vs-ski-thumb-02.png');
-    opacity: 0.5;
+    opacity: 0.4;
 }
-
-img{
-    position: absolute;
-    opacity: 0.3;
-    margin: auto;
-    width: 85%;
-}
-
 .bike{
    color: #ad2e39; 
    font-size: 100px;
@@ -85,15 +142,15 @@ img{
     transition: opacity 1.5s ease-out;
      opacity: 0;
 }
-.bike_form{
+.form{
+    position: relative;
     opacity: 0;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     margin-bottom: 10%;
-    
-    
+    margin-top: 2%;  
 }
 .ski_form{
     opacity: 0;
@@ -109,14 +166,35 @@ img{
     transition: opacity 1s ease-in;
 }
 .bike_form a{
-    color: white;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-input{
-    background: rgba(255,255,255,.5);
-    border: none;
-    width: 100%;
+.service_a{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+.serviceFlex{
+    display: flex;
+    align-items: baseline;
+    flex-flow: column;
+}
+.service_legend{
+    margin-bottom: 10.18em;
+}
+.selectFlex{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    height: 42px;
 }
 .center_box{
+    position: relative;
     display: flex;
     width: 400px;
     height: 400px;
@@ -131,19 +209,60 @@ input{
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px #555;
 }
-label, input, textarea{
-    padding: 1%;
-    
-}
 
-input, textarea{
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
+.button{
+    margin: auto;
+    font-size: 18px;
+    color: white;
+    width: 100px;
+    height: 37px;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    opacity: 0.8;
+    border: black;
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px #555;
     margin-top: 5%;
-    margin-bottom: 10%;
-    height: 35%;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;  
+}
+.button:hover {
+    background-color: purple
+}
+ 
+.button:active {
+  background-color: purple;
+  transform: translateY(4px);
+}
+.split_rows{
+    flex-direction: row;
+    align-items: flex-start;
+}
+.select_box{
+    position: relative;
+    height: 34em;
+    justify-content: center;
+    background-color: #ad2e39;
+    margin: 10%;
+    padding: 4%;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+    width: 31em;
+    padding-top: 2%;
+}
+.tenA{
+    padding: 2%;
+}
+.qty{
+    width: 51px;
+    height: 25px;
 }
 @media screen and (max-width: 600px){
     *{

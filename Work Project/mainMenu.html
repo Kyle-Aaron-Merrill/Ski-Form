@@ -25,39 +25,454 @@
         <link rel="stylesheet" href="menu.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" crossorigin="anonymous"></script>
         <script src="form.js" crossorigin="anonymous"></script>
-        <script src="menu.js"></script>
+        <script src="bike.js"></script>
+        <script src="ski.js"></script>
         <script src="https://kit.fontawesome.com/1c3ebc7a41.js" crossorigin="anonymous"></script>
     </head>
     <body>
-    <div class="body_box">
-        <div id="type_sel" class="type" >
-            <div  id="bike" class="bike">
-                <i class="fas fa-bicycle animation_effect" onclick="fade_bike()"></i>
+        <div class="body_box">
+            <div id="type_sel" class="type" >
+                <div  id="bike" class="bike">
+                    <i class="fas fa-bicycle animation_effect" onclick="fade_bike()"></i>
+                </div>
+                <div  id="ski" class="ski">
+                    <i class="fas fa-skiing-nordic animation_effect" onclick="fade_ski()" ></i>
+                </div>
             </div>
-            <div  id="ski" class="ski">
-                <i class="fas fa-skiing-nordic animation_effect" onclick="fade_ski()" ></i>
+            <div id="bike_custy_info" class='form'>
+                <legend>Customer Info</legend>
+                <div class="center_box ">
+                    <div tabindex="1">
+                        <a>First Name</a>
+                            <input type = "text" name ="f_name" id="f_name" size="35">
+                    </div>
+                    <div tabindex="2">
+                        <a>Last Name</a>
+                            <input type = "text" name ="l_name" id="l_name" size="35">
+                    </div>
+                    <div tabindex="3">
+                        <a >Phone Number</a>
+                            <input type="num" name="ph_num" id="ph_num" size="35">
+                    </div>
+                    <div tabindex="4">
+                        <button class="button" onclick="fade_bike_custyInfo()">Next</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="bike_form" class="bike_form alignItems">
-            <div id="custy_info" class="center_box ">
+        <div id='bike_info' class='form'>
+            <legend>Bike Info</legend>
+            <div class="center_box">
                 <div tabindex="1">
-                    <a>First Name</a>
-                        <input type = "text" name ="f_name" id="f_name" size="35">
+                    <a>Make</a>
+                        <input type="text" name="make" id="make" size="35">            
                 </div>
                 <div tabindex="2">
-                    <a>Last Name</a>
-                        <input type = "text" name ="l_name" id="l_name" size="35">
+                    <a>Model</a>
+                        <input type="text" name="model" id="model" size="35">
                 </div>
                 <div tabindex="3">
-                    <a >Phone Number</a>
-                        <input type="num" name="ph_num" id="ph_num">
+                    <a>Size</a>
+                        <input type="text" name="size" id="size" size="35">
                 </div>
+                <div tabindex="4">
+                    <button class="button" onclick="fade_bikeInfo()">Next</button>
+                </div>
+            </div>
+        </div>
+        <div id="bike_select" class='form'>
+            <legend class="service_legend">Select Service</legend>
+            <div class="select_box split_rows">
+                    <div tabindex="1" class="serviceFlex">
+                        <div class="selectFlex">
+                            <a class="service_a">1.</a>
+                            <select id="sku1" name="sku1" >
+                            <option></option>
+                            <option class="option_title">A LA CARTE SERVICE</option>
+                            <option></option>
+                            <option value="5574980">TUBE CHANGE     $9</option>
+                            <option value="5574981">CHAIN INSTALL       $10</option>
+                            <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                            <option value="5574983">CABLE INSTALL       $20</option>
+                            <option value="5574984">WHEEL TRUE     $20</option>
+                            <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                            <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                            <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                            <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                            <option value="5574990">WHEEL BUILD     $70</option>
+                            <option value="5574991">ACCESSORY INSTALL   $5</option>
+                            <option value="5574992">TAPE HANDLEBARS     $20</option>
+                            <option value="5574993">HEADSET INSTALL     $25</option>
+                            <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                            <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                            <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                            <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                            <option></option>
+                            <option class="option_title">BUNDLES SERVICES</option>
+                            <option value="5574974">BASIC TUNE UP	$85</option>
+                            <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                            <option value="5574975">ADVANCED TUNE UP	$130</option>
+                            <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                            <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty_1">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">2.</a>
+                            <select id="sku2" name="sku2" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty2">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">3.</a>
+                            <select id="sku3" name="sku3" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty3">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">4.</a>
+                            <select id="sku4" name="sku4" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty4">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">5.</a>
+                            <select id="sku5" name="sku5" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty5">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">6.</a>
+                            <select id="sku6" name="sku6" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty6">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">7.</a>
+                            <select id="sku7" name="sku7" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty7">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">8.</a>
+                            <select id="sku8" name="sku8" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty8">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="service_a">9.</a>
+                            <select id="sku9" name="sku9" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty9">
+                        </div>
+                        <div class="selectFlex">
+                            <a class="tenA">10.</a>
+                            <select id="sku10" name="sku10" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                            </select>
+                            <a class="service_a">Qty</a>
+                            <input type="number" class="qty" id="qty10">
+                        </div>
+                        <button class="button" onclick="fade_service()">Next</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="body_box">
+                <div id="ski_custy_info" class="form">
+                    <legend>Customer Info</legend>
+                        <div class="center_box ">
+                            <div tabindex="1">
+                                <a>First Name</a>
+                                    <input type = "text" name ="f_name" id="f_name" size="35">
+                            </div>
+                            <div tabindex="2">
+                                <a>Last Name</a>
+                                    <input type = "text" name ="l_name" id="l_name" size="35">
+                            </div>
+                            <div tabindex="3">
+                                <a >Phone Number</a>
+                                    <input type="num" name="ph_num" id="ph_num" size="35">
+                            </div>
+                            <div tabindex="4">
+                                <button class="button" onclick="fade_ski_custyInfo()">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                <div id='ski_info' class='form'>
+                    <legend>Ski Info</legend>
+                    <div class="center_box">
+                        <div tabindex="1">
+                            <a>Make</a>
+                                <input type="text" name="make" id="make" size="35">            
+                        </div>
+                        <div tabindex="2">
+                            <a>Model</a>
+                                <input type="text" name="model" id="model" size="35">
+                        </div>
+                        <div tabindex="3">
+                            <a>Size</a>
+                                <input type="text" name="size" id="size" size="35">
+                        </div>
+                        <div tabindex="4">
+                            <button class="button" onclick="fade_skiInfo()">Next</button>
+                        </div>
+                    </div>
             </div>
         </div>
     
-        <div id="ski_form" class="ski_form">
-            
-        </div>
     </div>
+     
     </body>
 </html>

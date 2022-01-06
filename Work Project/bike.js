@@ -1,18 +1,20 @@
-function fade_ski(){
-    var type_sel = document.getElementById('type_sel');
-    var custy_info = document.getElementById('ski_custy_info');
-    
-    changeDisplay(type_sel,custy_info);
-}
-function fade_ski_custyInfo(){
-    var custy_info= document.getElementById('ski_custy_info');
-    var ski_info = document.getElementById('ski_info');
 
-    changeDisplay(custy_info,ski_info);
+function fade_bike(){
+    var type_sel = document.getElementById('type_sel');
+    var custy_info = document.getElementById('bike_custy_info');
+
+    changeDisplay(type_sel,custy_info);
+    
 }
-function fade_skiInfo(){
-    var ski_info= document.getElementById('ski_info');
-    var ski_sel = document.getElementById('ski_select');
+function fade_bike_custyInfo(){
+    var custy_info= document.getElementById('bike_custy_info');
+    var bike_info = document.getElementById('bike_info');
+
+    changeDisplay(custy_info,bike_info);
+}
+function fade_bikeInfo(){
+    var bike_info= document.getElementById('bike_info');
+    var service_sel = document.getElementById('bike_select');
 
     changeDisplay(bike_info,service_sel);
 }
