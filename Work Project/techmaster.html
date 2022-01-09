@@ -24,8 +24,7 @@
 
             <link rel="stylesheet" href="techmaster.css">
             <script src="type.js"></script>
-            <script src="bike.js"></script>
-            <script src="ski.js"></script>
+            <script src="form.js"></script>
             <script src="https://kit.fontawesome.com/1c3ebc7a41.js" crossorigin="anonymous"></script>
         </head>
 
@@ -33,31 +32,981 @@
             <div class="image"></div>
             <div id='type_sel' class='type_box'>
                 <div  id="bike" class="type">
-                    <i class="fas fa-bicycle" onclick="real_bike_hours()"></i>
+                    <i class="fas fa-bicycle" onclick="real_bike_hours(this)"></i>
                 </div>
                 <div  id="ski" class="type">
-                    <i class="fas fa-skiing-nordic" onclick="real_ski_hours()" ></i>
+                    <i class="fas fa-skiing-nordic" onclick="real_ski_hours(this)" ></i>
                 </div>
             </div>
-            <div id="bike_custy_info" class="bike_box">
-                <legend>Customer Info</legend>
-                <div class="center_box ">
-                    <div tabindex="1">
-                        <a>First Name</a>
-                            <input type = "text" name ="f_name" id="f_name" size="35">
+            <form>
+                <fieldset>
+                    <div id="ski_custy_info" class="info_box">
+                        <legend>Customer Info</legend>
+                        <div class="center_box">
+                            <div tabindex="1">
+                                <a>First Name</a>
+                                    <input type = "text" name ="ski_f_name" id="ski_f_name" size="35">
+                            </div>
+                            <div tabindex="2">
+                                <a>Last Name</a>
+                                    <input type = "text" name ="ski_l_name" id="ski_l_name" size="35">
+                            </div>
+                            <div tabindex="3">
+                                <a >Phone Number</a>
+                                    <input type="num" name="ski_ph_num" id="ski_ph_num" size="35">
+                            </div>
+                            <div tabindex="4">
+                                <button type="button" class="button" onclick="fade_ski_custyInfo()">Next
+                            </div>
+                        </div>
                     </div>
-                    <div tabindex="2">
-                        <a>Last Name</a>
-                            <input type = "text" name ="l_name" id="l_name" size="35">
+                    <div id="ski_info" class="info_box">
+                        <legend>Ski Info</legend>
+                        <div class="center_box">
+                            <div tabindex="1">
+                                <a>Make</a>
+                                    <input type="text" name="ski_make" id="ski_make" size="35">            
+                            </div>
+                            <div tabindex="2">
+                                <a>Model</a>
+                                    <input type="text" name="ski_model" id="ski_model" size="35">
+                            </div>
+                            <div tabindex="3">
+                                <a>Size</a>
+                                    <input type="text" name="ski_size" id="ski_size" size="35">
+                            </div>
+                            <div tabindex="4">
+                                <button type="button" class="button" onclick="fade_skiInfo()">Next</button>
+                            </div>
+                        </div>
                     </div>
-                    <div tabindex="3">
-                        <a >Phone Number</a>
-                            <input type="num" name="ph_num" id="ph_num" size="35">
+                    <div id="ski_service" class="service_box">
+                        <legend class="service_legend">Select Service</legend>
+                        <div class="sel_box">
+                            <div class="input_align">
+                                <a class="service_a">1.</a>
+                                <select id="ski_sku1" name="ski_sku1" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_1">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">2.</a>
+                                <select id="ski_sku2" name="ski_sku2" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_2">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">3.</a>
+                                <select id="ski_sku3" name="ski_sku3" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_3">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">4.</a>
+                                <select id="ski_sku4" name="ski_sku4" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_4">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">5.</a>
+                                <select id="ski_sku5" name="ski_sku5" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_5">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">6.</a>
+                                <select id="ski_sku6" name="ski_sku6" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_6">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">7.</a>
+                                <select id="ski_sku7" name="ski_sku7" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_7">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">8.</a>
+                                <select id="ski_sku8" name="ski_sku8" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_8">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">9.</a>
+                                <select id="ski_sku9" name="ski_sku9" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_9">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">10.</a>
+                                <select id="ski_sku10" name="ski_sku10" >
+                                    <option> </option>
+                                    <option value="" class="option_title">HOT WAX (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="7524870">SWIX PERFORMANCE SPEED WAX $20</option>
+                                    <option value="7524871">SWIX HIGH SPEED WAX $30</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">EDGE SHARPENING (SKI and SNOWBOARD)</option>
+                                    <option></option>
+                                    <option value="4234098">EDGE SHARPENING HAND $25 (GR)</option>
+                                    <option value="4234097">EDGE SHARPENING MACHINE $20 (BHBS)</option>
+                                    <option value="7524872">SHARPEN AND WAX MACHINE $40 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">FULL TUNE PACKAGE</option>
+                                    <option></option>
+                                    <option value="4251980">FULL TUNE PACKAGE HAND - PS WAX $40 (GR)</option>
+                                    <option value="7524868">FULL TUNE PACKAGE HAND - HS WAX $45 (GR)</option>
+                                    <option value="4251981">FULL TUNE PACKAGE MACHINE - PS WAX $50 (BHBS)</option>
+                                    <option value="7524869">FULL TUNE PACKAGE MACHINE - HS WAX $55 (BHBS)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BINDING MOUNT</option>
+                                    <option></option>
+                                    <option value="4234101">SYSTEM BINDING MOUNT $30</option>
+                                    <option value="4234102">FLAT BINDING MOUNT $50</option>
+                                    <option value="4234103">ALPINE TOURING BINDING MOUNT $55</option>
+                                    <option value="4234104">SPLIT BOARD BINDING MOUNT $30</option>
+                                    <option value="4234105">SNOWBOARD BINDING MOUNT AND ASJUSTMENT $15</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BINDING ADJUSTMENT and TORQUE TEST</option>
+                                    <option></option>
+                                    <option value="4234106">SKI BINDING ADJUSTMENT AND TORQUE TEST $25</option>
+                                    <option value="4234108">BINDING TORQUE TEST (First Season Test Free w/ Purchase)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">BASE REPAIRS</option>
+                                    <option></option>
+                                    <option value="4234110">P-TEX REPAIRS BASE COST $5 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">SKI BOOT WORK</option>
+                                    <option></option>
+                                    <option value="4234111">SKI BOOT WORK BASE COST $25 (Tech determines cost)</option>
+                                    <option> </option>
+                                    <option value="" class="option_title">MISC Services</option>
+                                    <option></option>
+                                    <option value="4234112">SKIN TRIM $25</option>
+                                    <option value="4234113">SPLIT BOARD SKIN TRIM $20</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="ski_qty_10">
+                            </div>
+
+                            <button type="button" class="button">Next</button>
+
+                        </div>
                     </div>
-                    <div tabindex="4">
-                        <button class="button" onclick="fade_bike_custyInfo()">Next</button>
+                </fieldset>
+            </form>
+            <form>
+                <fieldset>
+                    <div id="bike_custy_info" class="info_box">
+                        <legend>Customer Info</legend>
+                        <div class="center_box">
+                            <div tabindex="1">
+                                <a>First Name</a>
+                                    <input type = "text" name ="bike_f_name" id="bike_f_name" size="35">
+                            </div>
+                            <div tabindex="2">
+                                <a>Last Name</a>
+                                    <input type = "text" name ="bike_l_name" id="bike_l_name" size="35">
+                            </div>
+                            <div tabindex="3">
+                                <a >Phone Number</a>
+                                    <input type="num" name="bike_ph_num" id="bike_ph_num" size="35">
+                            </div>
+                            <div tabindex="4">
+                                <button type="button" class="button" onclick="fade_bike_custyInfo()">Next</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div id="bike_info" class="info_box">
+                        <legend>Bike Info</legend>
+                        <div class="center_box">
+                            <div tabindex="1">
+                                <a>Make</a>
+                                    <input type="text" name="bike_make" id="bike_make" size="35">            
+                            </div>
+                            <div tabindex="2">
+                                <a>Model</a>
+                                    <input type="text" name="bike_model" id="bike_model" size="35">
+                            </div>
+                            <div tabindex="3">
+                                <a>Size</a>
+                                    <input type="text" name="bike_size" id="bike_size" size="35">
+                            </div>
+                            <div tabindex="4">
+                                <button type="button" class="button" onclick="fade_bikeInfo()">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bike_service" class="service_box">
+                        <legend class="service_legend">Select Service</legend>
+                        <div class="sel_box">
+                            <div class="input_align">
+                                <a class="service_a">1.</a>
+                                <select id="bike_sku1" name="bike_sku1" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_1">
+                            </div>
+                            <div class="input_align">
+                                <a class="service_a">2.</a>
+                                <select id="bike_sku2" name="bike_sku2" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_2">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">3.</a>
+                                <select id="bike_sku3" name="bike_sku3" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_3">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">4.</a>
+                                <select id="bike_sku4" name="bike_sku4" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_4">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">5.</a>
+                                <select id="bike_sku5" name="bike_sku5" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_5">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">6.</a>
+                                <select id="bike_sku6" name="bike_sku6" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_6">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">7.</a>
+                                <select id="bike_sku7" name="bike_sku7" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_7">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">8.</a>
+                                <select id="bike_sku8" name="bike_sku8" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_8">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a">9.</a>
+                                <select id="bike_sku9" name="bike_sku9" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_9">
+                            </div>
+
+                            <div class="input_align">
+                                <a class="service_a tenA">10.</a>
+                                <select id="bike_sku10" name="bike_sku10" >
+                                <option></option>
+                                <option class="option_title">A LA CARTE SERVICE</option>
+                                <option></option>
+                                <option value="5574980">TUBE CHANGE     $9</option>
+                                <option value="5574981">CHAIN INSTALL       $10</option>
+                                <option value="5574982">BRAKE/SHIFTER ADJUSTMENT        $15</option>
+                                <option value="5574983">CABLE INSTALL       $20</option>
+                                <option value="5574984">WHEEL TRUE     $20</option>
+                                <option value="5574986">SPOKE REPLACEMENT       $30</option>
+                                <option value="5574987">TUBELESS SETUP (per wheel)      $40</option>
+                                <option value="5574988">SINGLE BRAKE BLEED     $30</option>
+                                <option value="5574989">BRAKE BLEED PAIR    $55</option>
+                                <option value="5574990">WHEEL BUILD     $70</option>
+                                <option value="5574991">ACCESSORY INSTALL   $5</option>
+                                <option value="5574992">TAPE HANDLEBARS     $20</option>
+                                <option value="5574993">HEADSET INSTALL     $25</option>
+                                <option value="5574994">BOTTOM BRACKET INSTALL      $25</option>
+                                <option value="7308453">DRIVETRAIN DETAIL     $60</option>
+                                <option value="5574995">BOX BIKE FOR SHIPPING      $25</option>
+                                <option value="5574996">BIKE BUILD FROM BOX     $150</option>
+                                <option></option>
+                                <option class="option_title">BUNDLES SERVICES</option>
+                                <option></option>
+                                <option value="5574974">BASIC TUNE UP	$85</option>
+                                <option value="7308452">BASIC HYDRAULIC TUNE UP	$120</option>
+                                <option value="5574975">ADVANCED TUNE UP	$130</option>
+                                <option value="5574976">ADVANCED TUNE UP - ROAD	$140</option>
+                                <option value="5574979">OVERHAUL	$250</option>
+                                </select>
+                                <a class="service_a">Qty</a>
+                                <input type="number" class="qty" id="bike_qty_10">
+                            </div>
+                            <button type="button" class="button">Next</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
         </body>
     </html>

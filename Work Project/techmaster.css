@@ -24,6 +24,13 @@ a{
     padding-left: 3%;
     padding-right: 3%;
 }
+fieldset{
+    border: none;
+    position: relative;
+}
+form{
+    position: relative;
+}
 option{
     color: black;
     font-family: 'Lato';
@@ -37,7 +44,7 @@ option{
 }
 select{
     color: white;
-    width: auto;
+    width: 20em;
     height: 25px;
     background: rgba(255, 255, 255, 0.5);
     border: none;
@@ -125,15 +132,16 @@ margin: 1px auto;
     padding-left: 1.5em;
     padding-right: 1.5em;
 }
-.bike_box{
+.info_box{
     display: none;
     opacity: 0;
     align-items: center;
     justify-content: center;
     color: #ad2e39;
     width: auto;
-    height: 40.5em;
+    height: 51em;
 }
+
 .center_box{
     position: relative;
     display: flex;
@@ -164,7 +172,6 @@ margin: 1px auto;
     border: black;
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px #555;
-    margin-top: 5%;
     cursor: pointer;
     font-weight: bold;
     font-family: 'Lato';
@@ -181,11 +188,65 @@ margin: 1px auto;
   background-color: purple;
   transform: translateY(4px);
 }
+.option_title{
+    text-align: center;
+    color: #ad2e39;
+    font-weight: bold;
+}
+.service_a{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+.service_box{
+    display: none;
+    opacity: 0;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.sel_box{
+    display: flex;
+    position: relative;
+    height: 38em;
+    justify-content: center;
+    background-color: #ad2e39;
+    margin: 6.4em;
+    padding: 4%;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 8px 6px -6px #555;
+    width: 31em;
+    flex-direction: column;
+    padding: 2em;
+}
+.input_align{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 3em;
+}
+.qty{
+    width: 50px;
+    height: auto;
+}
+.service_legend{
+    bottom: 4.5em;
+}
 .fade_out{
-    transition: opacity 3s ease-out;
+    position: relative;
+    transition: opacity 1.5s ease-out;
      opacity: 0;
 }
 .fade_in{
-    transition: opacity 3s ease;
+    position: relative;
      opacity: 1;
+    transition: opacity 1.5s ease;
+}
+.tenA{
+    padding-right: 4px;
 }
