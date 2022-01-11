@@ -1,3 +1,4 @@
+
 function real_bike_hours(that){
     var type_sel = document.getElementById('type_sel');
     var custy_info = document.getElementById('bike_custy_info');
@@ -26,6 +27,4 @@ function changeDisplay(fade_out_element, fade_in_element){
         fade_in.classList.add('fade_in');
     }, 1600);
 }
-function setColor(that){
-    that.style.setColor = 'white';
-}
+

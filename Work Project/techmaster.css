@@ -21,8 +21,23 @@ body{
 }
 a{
     color: white;
-    padding-left: 3%;
-    padding-right: 3%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+p{
+    color: white;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 fieldset{
     border: none;
@@ -36,8 +51,7 @@ option{
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    
     border: black;
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px #555;
@@ -58,24 +72,30 @@ input{
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 legend {
     color: #ad2e39;
-    margin-bottom: 439px;
+    margin-bottom: 430px;
     position: absolute;
     font-size: 57px;
     font-weight: bold;
     font-family: 'Lato';
     font-style: normal;
     font-weight: bold;
-    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2.9em;
+    text-transform: uppercase;
+    text-shadow: white 0px 0px 5px
 }
 label, input, textarea{
     padding: 1%;
-    
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 input, textarea{
@@ -86,6 +106,14 @@ input, textarea{
     margin-top: 5%;
     margin-bottom: 10%;
     height: 35%;
+    width: 25em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+textarea{
+    color: white;
+    height: 21em;
 }
 i{
     transform: translateY(20px) scale(1);
@@ -99,6 +127,14 @@ i:hover{
     transform: translateY(20px) scale(1.8);
   transform-origin: 50% bottom;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.height{
+    width: 25em;
+    height: 31.36px;
+}
+.checkbox{
+    box-shadow: none;
+    margin-right: -1em;
 }
 .image{
     position: relative;
@@ -153,7 +189,7 @@ margin: 1px auto;
     margin: 20%;
     background-color: #ad2e39;
     margin: 10%;
-    padding: 4%;
+    padding: 2%;
     border: none;
     border-radius: 4px;
     box-shadow: 0 8px 6px -6px #555;
@@ -177,15 +213,14 @@ margin: 1px auto;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;  
+      
 }
 .button:hover {
-    background-color: purple
+    background-color: #39ad2e
 }
  
 .button:active {
-  background-color: purple;
+  background-color: #39ad2e;
   transform: translateY(4px);
 }
 .option_title{
@@ -196,9 +231,9 @@ margin: 1px auto;
 .service_a{
     font-family: 'Lato';
     font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
-    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    font-weight: bolder;
+    text-transform: initial;
+    font-size: 20px;
 }
 .service_box{
     display: none;
@@ -227,7 +262,7 @@ margin: 1px auto;
 .input_align{
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 3em;
 }
 .qty{
@@ -235,7 +270,58 @@ margin: 1px auto;
     height: auto;
 }
 .service_legend{
-    bottom: 4.5em;
+    bottom: 5.8em;
+}
+.tenA{
+    margin-left: -5px;
+}
+.ski_snow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 1em;
+    box-shadow: none;
+    align-items: flex-end;
+    width: 100%;
+}
+.radio{
+    width: 20px;
+    height: 20px;
+    box-shadow: none;
+    margin: 0px 0em 0px -3em;
+}
+.skier_type{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    text-shadow: none;
+    width: 101%;
+    margin-left: -1px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.skier_type a{
+    width: 30em;
+}
+.boot_info{
+    height: 470px;
+}
+.boot_legend{
+    bottom: 4.3em;
+}
+.stance{
+    height: 5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 16px 2px #555;
+}
+.stance_flex{
+    justify-content: space-evenly;
 }
 .fade_out{
     position: relative;
@@ -246,7 +332,4 @@ margin: 1px auto;
     position: relative;
      opacity: 1;
     transition: opacity 1.5s ease;
-}
-.tenA{
-    padding-right: 4px;
 }
