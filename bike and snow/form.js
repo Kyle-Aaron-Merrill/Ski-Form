@@ -1,85 +1,97 @@
-
-function fade_bike_custyInfo(){
-    var custy_info = document.getElementById('bike_custy_info');
-    var bike_info = document.getElementById('bike_info');
-
-    custyInfo(custy_info,bike_info);
-}
-function fade_bikeInfo(){
-    var bike_info = document.getElementById('bike_info');
-    var service_sel = document.getElementById('bike_service');
-
-    custyInfo(bike_info,service_sel);
-}
-function fade_ski_custyInfo(){
-    var custy_info = document.getElementById('ski_custy_info');
-    var ski_info = document.getElementById('ski_info');
-
-    custyInfo(custy_info,ski_info);
-}
-function fade_skiInfo(){
-    var bike_info = document.getElementById('ski_info');
-    var service_sel = document.getElementById('ski_service');
-
-    custyInfo(bike_info,service_sel);
-}
-function switchDisplay(fade_out_element, fade_in_element){
-    var fade_in = fade_in_element; 
-    var fade_out = fade_out_element;
-
-    fade_out.classList.remove('fade_in');
-    fade_out.classList.add('fade_out');
-    setTimeout(function(){
-        fade_out.style.display = 'none';
-        fade_in.style.display = 'flex';
-    }, 1500);
-    setTimeout(function(){
-        fade_in.classList.add('fade_in');
-    }, 1600);
-}
-function change_service(class_list){
-    var service_sel = document.getElementById('ski_service');
-    var skier_info = document.getElementById('skier_info');
-    var stance_pref = document.getElementById('stance_pref');
-
-    if (class_list == 'ski'){
-        switchDisplay(service_sel,skier_info);
-        skier_info.classList.add(class_list);
+function put_it_in_reverse_terry(){
+    var elements = document.getElementsByClassName("element");
+    for(var index=0;index<elements.length;index++){ 
+        var current = elements[index];
+        if(current.style.display == "flex"){
+            reverse_your_magic(current,index,elements);
+            break;
+        }
     }
-    if (class_list == 'snow'){
-        switchDisplay(service_sel,stance_pref);
-    }
-    if (class_list == 'ski&snow'){
-        switchDisplay(service_sel,skier_info);
-        skier_info.classList.add(class_list);
-    }
-
 }
-function change_skier_info(that){
-    var skier_info = document.getElementById('skier_info');
-    var stance_pref = document.getElementById('stance_pref');
-    var boot_info = document.getElementById('boot_info');
-
+function reverse_your_magic(current,index,elements){
+    for(var i=index;i>0;i--){
+        var last = elements[i-1];
+        var type = document.getElementById('type_sel');
+        var classCheck = last.classList.contains("false");
+        if (current.id != 'ski_custy_info' && current.id != 'bike_custy_info' && classCheck != true) {
+            swapDisplay(current,last);
+            break;
+        }
+        else if (current.id == 'ski_custy_info' || current.id == 'bike_custy_info') {
+            type_sel(current,type);
+            break;
+        }
+        if (classCheck == true) {
+            last.classList.remove('false');
+        }
+    }
     
-    if (skier_info.classList.contains('ski')){
-        custyInfo(skier_info,boot_info);
-    }
-    if (skier_info.classList.contains('ski&snow')){
-        custyInfo(skier_info,stance_pref);
+}
+function type_sel(current,type){
+    var btn = document.getElementById('backButton');
+    btn.classList.remove('fade_in')
+    current.classList.remove('fade_in');
+    btn.classList.add('fade_out')
+    current.classList.add('fade_out');
+    setTimeout(function(){
+        btn.style.display = 'none';
+        current.style.display = 'none';
+        type.style.display = 'flex';
+    }, 0500);
+    setTimeout(function(){
+        type.classList.add('fade_in');
+    }, 0600);
+}
+function switchDisplay(){
+    var elements = document.getElementsByClassName("element");
+    for(var index=0;index<elements.length;index++){ 
+        var current = elements[index];
+        if(current.style.display == "flex"){
+            do_your_magic(current,index,elements);
+            break;
+        }
     }
 }
-function change_stance(){
-    var stance_pref = document.getElementById('stance_pref');
-    var boot_info = document.getElementById('boot_info');
-
+function do_your_magic(current,index,elements){
     
-    switchDisplay(stance_pref,boot_info);
+    for (var i=index;i<elements.length;i++){
+        var next = elements[i+1];
+        var servicecheck = current.classList.contains("service");
+        if(servicecheck == true){
+            var id = current.id.split("_");
+            id = id[0];
+            run_dem_skus_ya_heard(id);
+        }
+        var classCheck = next.classList.contains("false");
+        if(classCheck != true){
+            swapDisplay(current,next);
+            break;
+        }
+    }
 }
-function change_boot_info(that){
-    var boot_info = document.getElementById('boot_info');
-    var notes = document.getElementById('ski_notes');
-
-    custyInfo(boot_info,notes);
+function getForm(that){
+    var type = that.id.split("_");
+    type = type[0];
+    var current = document.getElementById('type_sel');
+    var next = document.getElementById(type+"_custy_info");
+    swapDisplay(current,next);
+}
+function swapDisplay(current,next){
+    var btn = document.getElementById('backButton');
+    btn.classList.remove('fade_in')
+    current.classList.remove('fade_in');
+    btn.classList.add('fade_out')
+    current.classList.add('fade_out');
+    setTimeout(function(){
+        btn.style.display = 'none';
+        current.style.display = 'none';
+        btn.style.display = 'grid';
+        next.style.display = 'flex';
+    }, 0500);
+    setTimeout(function(){    
+        next.classList.add('fade_in');
+        btn.classList.add('fade_in');
+    }, 0600);
 }
 function run_dem_skus_ya_heard(type){
     var sku1= $('#'+type+'_sku1').val();
@@ -94,9 +106,8 @@ function run_dem_skus_ya_heard(type){
     var sku10= $('#'+type+'_sku10').val();
 
     var arr = [sku1,sku2,sku3,sku4,sku5,sku6,sku7,sku8,sku9,sku10];
-
-    var service_sel = document.getElementById(type + '_service');
-    var notes = document.getElementById(type +'_notes');
+    var snowElements = document.querySelectorAll('.snow');
+    var skiElements = document.querySelectorAll('.ski');
     var ski = false;
     var snow = false;
 
@@ -104,22 +115,22 @@ function run_dem_skus_ya_heard(type){
     snow = snow_skus(arr);
 
     if (ski == true && snow == false){
-        var class_list = 'ski';
-        change_service(class_list);
+        snowElements.forEach(element => {
+            element.classList.add('false');
+        });
     }
     if (ski == false && snow == true){
-        var class_list = 'snow';
-        change_service(class_list);
-    }
-    if (ski == true && snow == true){
-        var class_list = 'ski&snow'
-        change_service(class_list);
-    }
-    else if (ski == false && snow == false && type == 'bike'){
-        switchDisplay(service_sel,parts_sel);
+        skiElements.forEach(element => {
+            element.classList.add('false');
+        });
     }
     else if(ski == false && snow == false){
-        switchDisplay(service_sel,notes);
+        snowElements.forEach(element => {
+            element.classList.add('false');
+        });
+        skiElements.forEach(element => {
+            element.classList.add('false');
+        });
     }
 }
 function ski_skus(array){
@@ -136,18 +147,6 @@ function snow_skus(array){
     });
     return to_monkey;
 }
-function show_parts(){
-    var service = document.getElementById('bike_service');
-    var parts = document.getElementById('parts_search');
-
-    switchDisplay(service,parts);
-}
-function show_notes(){
-    var parts = document.getElementById('parts_search');
-    var notes = document.getElementById('bike_notes');
-
-    switchDisplay(parts,notes);
-} 
 function ask_da_q(f_name,l_name,ph_num,type){
     var element = document.getElementById('customer_txt');
     var first = f_name;
@@ -189,5 +188,3 @@ function fade_another(){
 
     switchDisplay(notes,ski_info) 
 }
-
-    
