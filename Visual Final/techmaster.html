@@ -25,13 +25,11 @@
             <link rel="stylesheet" href="techmaster.css">
             <script src="type.js"></script>
             <script src="form.js"></script>
-            <script src="ski.js"></script>
-            <script src="bike.js"></script>
-            <script src="parts.js"></script>
             <script src="validation.js"></script>
-            <script src="form2.js"></script>
-            <script src="type2.js"></script>
-            <script src="elements.js"></script>
+            <script src="skus.js"></script>
+            <script src="parts.js"></script>
+            <script src="bike.js"></script>
+            <script src="ski.js"></script>
             <link rel="js" href="C:\Users\Kyle\Documents\TechMaster v5\js">
             <script src="https://kit.fontawesome.com/1c3ebc7a41.js" crossorigin="anonymous"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -50,7 +48,7 @@
                     </div>
             <form class="snow_tech" id="ski_tech" >
                 <fieldset>
-                    <div class="alignAll">
+                    <div class="alignAll" id="ski_alignAll">
                         <div class="button_dec" id="ski_button_div">
                             <button type="button" id="ski_button"  name="back" class="ski_button button" onclick="button_mover(this)"><i class="fas fa-arrow-left" style="display: contents;"></i></button>
                             <button type="button"  id="ski_button" name="next" class="ski_button button" onclick="button_mover(this)"><i class="fas fa-arrow-right" style="display: contents;"></i></button>
@@ -685,11 +683,11 @@
                         
                             </div>
                         </div>
-                        <div id="ski_notes" class="info_box element">
+                        <div id="ski_notes_div" class="info_box element">
                             <legend>notes</legend>
                                 <div class="center_box">
                                 <div tabindex="1">
-                                    <textarea id="ski_notes_value" cols="30" rows="10" class="notes" placeholder="Gamer Text Here....."></textarea>
+                                    <textarea id="ski_notes" cols="30" rows="10" class="notes" placeholder="Gamer Text Here....."></textarea>
                                 </div>
                                 
                                 <div tabindex="2">
@@ -703,7 +701,7 @@
             </form>
             <form class="bike_tech" id="bike_tech">
                 <fieldset>
-                    <div class="alignAll">
+                    <div class="alignAll" id="bike_alignAll">
                         <div class="button_dec" id="bike_button_div">
                             <button type="button" id="bike_button" name="back" class="bike_button button" onclick="button_mover(this)"><i class="fas fa-arrow-left" style="display: contents;"></i></button>
                             <button type="button" id="bike_button" name="next" class="bike_button button" onclick="button_mover(this)"><i class="fas fa-arrow-right" style="display: contents;"></i></button>
@@ -1113,71 +1111,71 @@
                             <div class="sel_box parts">
                                 <div tabindex="1" class="part_div">
                                     <input class="part_input" type="text" id="bike_part_input" width="75%">
-                                    <button type="button"  name="next" class="button" name="next" onclick="addPart('bike')" style="display: revert;">Add</button>
+                                    <button type="button"   class="button"  onclick="addPart('bike')" style="display: revert;">Add</button>
                                 </div>
                                 <div tabindex="2" class="part_box">
                                     <div tabindex="1" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku1" class="bike_part">
+                                        <input id="bike_sku11" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty1">
+                                        <input type="number" class="qty" id="bike_qty11">
                                     </div>
                                     <div tabindex="2" class="bike_part_div" style="display: none;"> 
-                                        <input id="bike_part_sku2" class="bike_part">
+                                        <input id="bike_sku12" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty2">
+                                        <input type="number" class="qty" id="bike_qty12">
                                     </div>
                                     <div tabindex="3" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku3" class="bike_part">
+                                        <input id="bike_sku13" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty3">
+                                        <input type="number" class="qty" id="bike_qty13">
                                     </div>
                                     <div tabindex="4" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku4" class="bike_part">
+                                        <input id="bike_sku14" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty4">
+                                        <input type="number" class="qty" id="bike_qty14">
                                     </div>
                                     <div tabindex="5" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku5" class="bike_part" >
+                                        <input id="bike_sku15" class="bike_part" >
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty5">
+                                        <input type="number" class="qty" id="bike_qty15">
                                     </div>
                                     <div tabindex="6" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku6" class="bike_part">
+                                        <input id="bike_sku16" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty6">
+                                        <input type="number" class="qty" id="bike_qty16">
                                     </div>
                                     <div tabindex="7" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku7" class="bike_part">
+                                        <input id="bike_sku17" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty7">
+                                        <input type="number" class="qty" id="bike_qty17">
                                     </div>
                                     <div tabindex="8" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku8" class="bike_part">
+                                        <input id="bike_sku18" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty8">
+                                        <input type="number" class="qty" id="bike_qty18">
                                     </div>
                                     <div tabindex="9" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku9" class="bike_part">
+                                        <input id="bike_sku19" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty9">
+                                        <input type="number" class="qty" id="bike_qty19">
                                     </div>
                                     <div tabindex="10" class="bike_part_div" style="display: none;">
-                                        <input id="bike_part_sku10" class="bike_part">
+                                        <input id="bike_sku20" class="bike_part">
                                         <a class="service_a">Qty</a>
-                                        <input type="number" class="qty" id="bike_part_qty10">
+                                        <input type="number" class="qty" id="bike_qty20">
                                     </div>
                                 </div>
                                 
                             </div>
                         </div>
-                        <div id="bike_notes" class="info_box element">
+                        <div id="bike_notes_div" class="info_box element">
                             <legend>notes</legend>
                                 <div class="center_box">
                                 <div tabindex="1">
-                                    <textarea name="bike_notes" id="notes" cols="30" rows="10" class="notes" placeholder="Gamer Text Here....."></textarea>
+                                    <textarea id="bike_notes" cols="30" rows="10" class="notes" placeholder="Gamer Text Here....."></textarea>
                                 </div>
                                 <div tabindex="2">
-                                    <button class="submit" type="button" onclick="submit_bike_form()">submit</button>
+                                    <button class="submit" type="button" onclick="insert_bike()">submit</button>
                                 </div>
                             </div>
                         </div>

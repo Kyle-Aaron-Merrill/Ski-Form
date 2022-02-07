@@ -1,3 +1,15 @@
+document.body.addEventListener('keypress', (e) => {
+    var type = document.querySelectorAll('.button_dec');
+    type.forEach(element => {
+        if(element.style.display == 'flex') type = element.id.split('_')[0];
+    });
+    var element = document.getElementsByName('next')
+    element.forEach(btn => {
+        if(btn.id.split('_')[0] == type) element = btn;
+    });
+    if(e.key == 'Enter') button_mover(element);
+});
+
 function button_mover(that){
     var div_enabled = true;
     var next_enabled = true;
@@ -19,7 +31,7 @@ function button_mover(that){
                 for(var n=i;n<elements.length;n++){
                     var next = elements[n+1];
                     
-
+                    selectChecker(next.id.split('_')[1],type);
                     serviceChecker(current.id.split('_')[0],current.id.split('_')[1]);
                     next_enabled = notesChecker(next.id.split('_')[1]);
                     
@@ -38,19 +50,31 @@ function button_mover(that){
                     next = obj[0];
                     div_enabled = obj[1];
 
-
+                    selectChecker(next.id.split('_')[1],type);
                     var isFalse = next.classList.contains("false");
 
                     if (isFalse != true){  
                         custyInfo(current,next,div_enabled,next_enabled,next_btn,button_div,button_type);
                         break
                     }
-                    if (isFalse == true){
-                        next.classList.remove('false');
-                    }
                 }
             }
         }
+    }
+}
+
+function selectChecker(id,type){
+    var align = document.getElementById(type +'_alignAll');
+    if (id == 'service' || id == 'search') {
+        setTimeout(function(){
+            align.style.margin = 'auto';
+        }, 0500);
+    }
+    if (id != 'service' && id != 'search') {
+        setTimeout(function(){
+            //align.style.margin.remove('auto')
+            align.style.margin = '20% auto';
+        }, 0500);
     }
 }
 function fuck_these_buttons(div_enabled,next_enabled,next,button_div){

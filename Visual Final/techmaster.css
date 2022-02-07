@@ -171,17 +171,17 @@ i:hover{
     margin: auto;
 }
 .image::before{
-margin: 1px auto;
-    width: 1230px;
-    height: 812px;
+    width: 100%;
+    height: 820px;
     content: '';
     position: absolute;
     top: 0%;
     bottom: 0%;
     left: 0%;
     right: 0%;
-    background-image: url('https://blisterreview.com/wp-content/uploads/2021/06/71-bike-vs-ski-thumb-02.png');
+    background-image: url(https://static.evo.com/content/cms/evoacademy/fluidride/ski/r1/5404_evoacademy_ski_mtb_video_video_thumbnail_r1.png);
     opacity: 0.4;
+    background-size: cover;
 }
 .type_box{
     display: flex;
@@ -317,6 +317,13 @@ div .button{
     flex-direction: column;
     padding: 2em;
 }
+.header-nav-section{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 5em;
+    align-items: center;
+}
 .input_align{
     display: flex;
     align-items: baseline;
@@ -418,7 +425,7 @@ div .button{
     margin: auto;
 }
 .alignAll{
-    margin: auto;
+    margin: 20% auto;
     display: flex;
     flex-direction: column;
     width: fit-content;

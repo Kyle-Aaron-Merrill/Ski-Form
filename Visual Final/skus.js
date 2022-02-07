@@ -21,14 +21,30 @@ function run_dem_skus_ya_heard(type){
     ski = ski_skus(arr);
     snow = snow_skus(arr);
 
+    snowElements.forEach(element => {
+        element.classList.remove('false');
+    });
+    skiElements.forEach(element => {
+        element.classList.remove('false');
+    });
+
     if (ski == true && snow == false){
         snowElements.forEach(element => {
             element.classList.add('false');
         });
     }
-    if (ski == false && snow == true){
+    else if (ski == false && snow == true){
         skiElements.forEach(element => {
             element.classList.add('false');
+        });
+        
+    }
+    else if (ski == true && snow == true){
+        snowElements.forEach(element => {
+            element.classList.remove('false');
+        });
+        skiElements.forEach(element => {
+            element.classList.remove('false');
         });
     }
     else if(ski == false && snow == false){
