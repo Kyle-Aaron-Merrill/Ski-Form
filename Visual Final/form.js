@@ -158,5 +158,8 @@ function enable_buttons(type){
 function enable_form(type){
     var form = document.getElementById(type+"_tech");
     
-    form.style.display = 'flex';
+    setTimeout(function(){
+        form.style.display = 'flex';
+    }, 0500);
+    
 }
